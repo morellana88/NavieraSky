@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Lista contenedores</h1>
+  {% if contenedores_list %}
+  <ul>
+    {% for contenedor in contenedores_list %}
+      <li>
+        <a href="{{ contenedor.get_absolute_url }}">{{ contenedor.codigo }}</a> ({{contenedor.bahia}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>No hay contenedores.</p>
+  {% endif %}       
+{% endblock %}

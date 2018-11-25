@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-import NavieraSkyApp.views
+from NavieraSkyApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', NavieraSkyApp.views.index, name='index'),
+    path('', views.index, name='index'),
+    path('contenedores/', views.ContenedorListView.as_view(), name='contenedores_list'),
+    path('contenedores/<int:pk>', views.ContenedorLDetailView.as_view(), name='contenedores_list'),
 ]
