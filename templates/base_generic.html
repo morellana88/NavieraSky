@@ -15,8 +15,9 @@
       <div class="col-sm-2">
       {% block sidebar %}
         <ul class="sidebar-nav">
-          <li><a href="{% url 'index' %}">Inicio</a></li>
-          <li><a href="{% url 'contenedores_list' %}">Contenedores</a></li>
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'contenedores_list' %}">Contenedores</a></li>
+            <li><p><a href="{% url 'logout' %}">Salir</a></p></li>
 {#          <li><a href="">All authors</a></li>#}
         </ul>
      {% endblock %}
