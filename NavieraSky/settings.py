@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_countries',
+    'crispy_forms',
     'NavieraSkyApp.apps.NavieraskyappConfig',
 ]
 
@@ -129,7 +130,9 @@ STATIC_URL = '/static/'
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
-LOGIN_URL = '/naviera/login'
+LOGIN_URL = 'login'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
