@@ -20,8 +20,9 @@ from NavieraSkyApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
+    # path('login/', )
+    path('naviera/', include('django.contrib.auth.urls')),
     path('', views.index, name='index'),
-    path('contenedores/', views.ContenedorListView.as_view(), name='contenedores_list'),
-    path('contenedores/<int:pk>', views.ContenedorLDetailView.as_view(), name='contenedores_list'),
+    path('contenedores/', views.ContenedorListView.as_view(), name='contenedores'),
+    path('contenedores/<int:pk>', views.ContenedorLDetailView.as_view(), name='contenedores'),
 ]

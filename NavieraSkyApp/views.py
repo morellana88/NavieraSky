@@ -3,11 +3,11 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView, DeleteView, CreateView
 
 # Create your views here.
-from NavieraSkyApp.models import Contenedores
+from NavieraSkyApp.models import Contenedor
 
 
 def index(request):
-    contenedores = Contenedores.objects.all().count()
+    contenedores = Contenedor.objects.all().count()
 
     context = {
         'contenedores': contenedores,
@@ -17,13 +17,13 @@ def index(request):
 
 
 class ContenedorListView(ListView):
-    model = Contenedores
-    context_object_name = 'contenedores_list'
+    model = Contenedor
+    context_object_name = 'contenedores'
     template_name = 'contenedores/contenedores_list.html'
 
 
 class ContenedorLDetailView(DetailView):
     # model = get_object_or_404(Contenedores, pk=pk=primary_key)
-    model = Contenedores
+    model = Contenedor
     context_object_name = 'contenedores_detail'
     template_name = 'contenedores/contenedor_detail.html'
