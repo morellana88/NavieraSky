@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-from NavieraSkyApp.models import Contenedor
+from NavieraSkyApp.models import Contenedor, Salida, Ingreso, Producto, Cliente
 
 from .forms import LoginForm
 
@@ -14,27 +14,21 @@ from .forms import LoginForm
 @login_required
 def Home(request):
     contenedores = Contenedor.objects.all().count()
+    salidas = Salida.objects.all().count()
+    ingresos = Ingreso.objects.all().count()
+    productos = Producto.objects.all().count()
+    clientes = Cliente.objects.all().count()
 
     context = {
         'contenedores': contenedores,
+        'salidas': salidas,
+        'ingresos': ingresos,
+        'productos': productos,
+        'clientes': clientes,
+
     }
 
     return render(request, 'index.html', context=context)
-
-
-# @login_required
-class ContenedorListView(ListView):
-    model = Contenedor
-    context_object_name = 'contenedores'
-    template_name = 'contenedores/contenedores_list.html'
-
-
-# @login_required
-class ContenedorLDetailView(DetailView):
-    # model = get_object_or_404(Contenedores, pk=pk=primary_key)
-    model = Contenedor
-    context_object_name = 'contenedores_detail'
-    template_name = 'contenedores/contenedor_detail.html'
 
 
 class LoginView(FormView):

@@ -14,16 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path, include
+from django.conf.urls import include, url
+from django.contrib import admin, auth
 
-from NavieraSkyApp.views import Home, LoginView, LogOutView, ContenedorListView, ContenedorLDetailView
+
+from NavieraSkyApp.views import Home, LoginView, LogOutView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # path('login/', )
-    re_path(r'^login/$', LoginView.as_view(), name='login'),
-    re_path(r'^logout/$', LogOutView.as_view(), name='logout'),
-    path('', Home, name='home'),
-    path('naviera/contenedores/', ContenedorListView.as_view(), name='contenedores'),
-    path('naviera/contenedores/<int:pk>', ContenedorLDetailView.as_view(), name='contenedores'),
+    url('admin/', admin.site.urls),
+    url(r'^crud/', include('crudbuilder.urls'), name='crud'),
+    url(r'^login/', LoginView.as_view(), name='login'),
+    url(r'^logout/$', LogOutView.as_view(), name='logout'),
+    url('', Home, name='home'),
 ]

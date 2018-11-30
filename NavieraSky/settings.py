@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_countries',
     'crispy_forms',
-    'NavieraSkyApp.apps.NavieraskyappConfig',
+    'NavieraSkyApp',
+    'django_tables2',
+    'crudbuilder',
+    # 'NavieraSkyApp.apps.NavieraskyappConfig',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +139,6 @@ LOGOUT_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+LOGIN_REQUIRED_FOR_CRUD = True
+PERMISSION_REQUIRED_FOR_CRUD = False
+#PROJECT_NAME = 'NavieraSkyApp'

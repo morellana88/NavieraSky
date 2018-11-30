@@ -12,16 +12,18 @@
 </head>
 <body>
   <div class="container-fluid">
-
     <div class="row">
         {% if user.is_authenticated %}
             <div class="col-sm-2">
                 {% block sidebar %}
-                    <ul class="sidebar-nav">
+                    <ul class="nav flex-column">
                         <li><a href="{% url 'home' %}">Inicio</a></li>
-                        <li><a href="{% url 'contenedores' %}">Contenedores</a></li>
-                        <li><p><a href="{% url 'logout' %}">Salir</a></p></li>
-            {#          <li><a href="">All authors</a></li>#}
+                        <li><a class="nav-link" href="crud/NavieraSkyApp/Contenedores/">Contenedores</a></li>
+                        <li><a class="nav-link" href="crud/NavieraSkyApp/Salidas/">Salidas de contenedores</a></li>
+                        <li><a class="nav-link" href="crud/NavieraSkyApp/Ingresos/">Ingresos de contenedores</a></li>
+                        <li><a class="nav-link" href="crud/NavieraSkyApp/clientes/">Clientes</a></li>
+                        <li><a class="nav-link" href="crud/NavieraSkyApp/productos/">Productos</a></li>
+                        <li><a class="nav-link" href="{% url 'logout' %}">Salir</a></li>
                     </ul>
                 {% endblock %}
             </div>

@@ -2,10 +2,14 @@
 
 {% block content %}
   <h1>Naviera Sky</h1>
-  <p>Bienvenidos esta aplicación ha sido desarrollada para la asignatura ISW2 <em>Grupo 01</em></p>
-  <h2>Contenido dinamico</h2>
   <p>Estos son los registros actuales de Naviera Sky:</p>
-  <ul>
-    <li><strong>Contenedores:</strong> {{ contenedores }}</li>
-  </ul>
+    <div class="container">
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Contenedores:</strong> {{ contenedores }}</li>
+            <li class="list-group-item"><strong>Salidas:</strong> {{ salidas }}</li>
+            <li class="list-group-item"><strong>Ingresos:</strong> {{ ingresos }}</li>
+            <li class="list-group-item"><strong>Clientes:</strong> {{ clientes }}</li>
+            <li class="list-group-item"><strong>Productos:</strong> {{ productos }}</li>
+        </ul>
+    </div>
 {% endblock %}
